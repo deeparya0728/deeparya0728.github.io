@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<script src="js/jquery.min.js"></script>
+		<meta charset="UTF-8"></meta>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Archana Weds Pradeep</title>
+		<link rel="shortcut icon" href="../favicon.ico"></link>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/demo.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/component.css"></link>
+		<script src="js/modernizr.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<section id="photostack-1" class="photostack">
+				<div>
+					<figure>
+					<span id="q"></span>
+						<a href="void(0);" class="photostack-img"><img src="img/1.jpg" alt="img01"/></a>
+						<figcaption>
+							<h2 class="photostack-title">Wedding Invitation Archana(Priya) & Pradeep(Deep)</h2>
+							<div class="photostack-back">
+								<p>The ride of our life begin.. This day I will marry my best friend..
+								The one I laugh with,live for,love..
+								Join us in the Celebration !
+								</p>
+							</div>
+						</figcaption>
+					</figure>
+					<figure>
+						<a href="void(0);" class="photostack-img"><img src="img/2.jpg" alt="img02"/></a>
+						<figcaption>
+							<h2 class="photostack-title">Save The dates</h2>
+							<div class="photostack-back">
+								<p>Winter is here.. Get your warm cloth.. 10th December 2018 Monday be ready</p>
+							</div>
+						</figcaption>
+					</figure>
+					<figure>
+						<a href="void(0);" class="photostack-img"><img src="img/3.jpg" alt="img03"/></a>
+						<figcaption>
+							<h2 class="photostack-title">Venue</h2>
+							<div class="photostack-back">
+								<p>Allahabad.. sorry Prayagraj.. Harshit garden, village malak chaturi</p>
+							</div>
+						</figcaption>
+					</figure>
+					<figure>
+						<a href="void(0);" class="photostack-img"><img src="img/5.jpg" alt="img05"/></a>
+						<figcaption>
+							<h2 class="photostack-title">Check the time</h2>
+							<div class="photostack-back">
+								<p>Monday 10th December 2018 6:00pm onwords, We will wait for you</p>
+							</div>
+						</figcaption>
+					</figure>
+				</div>
+			</section>
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/photostack.js"></script>
+		<script>
+		new Photostack( document.getElementById( 'photostack-1' ), {
+				callback : function( item ) {
+				}
+			} );
+			
+			
+			var $j = jQuery.noConflict();
+			var count = 0;
+			const urlParams = new URLSearchParams(window.location.search);
+			const name = urlParams.get('q');
+			$j('#q').text("To, "+name);
+			setInterval(function()
+			{
+				clickBackIndex(count);
+				count++;
+				if(count>4){
+				count=0;
+				}
+			},8000);
+			
+			function clickBackIndex(index){
+				$j('#photostack-1 nav span').eq(index).trigger('click');
+				//console.log("in clickBackIndex "+index);
+				setInterval(function()
+					{
+						clickNextIndex(index);
+					},4000);
+				}
+			function clickNextIndex(index){
+			//console.log("in clickNextIndex "+index);
+				$j('#photostack-1 nav span').eq(index+1).trigger('click');
+			}
+		</script>
+	</body>
+</html>
