@@ -17,7 +17,6 @@
 			<section id="photostack-1" class="photostack">
 				<div>
 					<figure>
-					<span id="q"></span>
 						<a href="void(0);" class="photostack-img"><img src="img/1.jpg" alt="img01"/></a>
 						<figcaption>
 							<h2 class="photostack-title">Wedding Invitation Archana(Priya) & Pradeep(Deep)</h2>
@@ -70,9 +69,6 @@
 			
 			var $j = jQuery.noConflict();
 			var count = 0;
-			const urlParams = new URLSearchParams(window.location.search);
-			const name = urlParams.get('q');
-			$j('#q').text("To, "+name);
 			setInterval(function()
 			{
 				clickBackIndex(count);
